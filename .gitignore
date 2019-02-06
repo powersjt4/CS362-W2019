@@ -1,2 +1,6 @@
 
 *.gcno
+*.gcov
+*.gcda
+*.o
+dominion/testDrawCard.dSYM/Contents/Resources/DWARF/testDrawCard
