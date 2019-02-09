@@ -4,3 +4,4 @@
 *.gcda
 *.o
 dominion/testDrawCard.dSYM/Contents/Resources/DWARF/testDrawCard
+dominion/player.dSYM/testutilities.c

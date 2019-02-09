@@ -594,6 +594,7 @@ int getCost(int cardNumber)
 			return 8;
 		case copper:
 			return 0;
+
 		case silver:
 			return 3;
 		case gold:
@@ -604,6 +605,7 @@ int getCost(int cardNumber)
 			return 5;
 		case feast:
 			return 4;
+
 		case gardens:
 			return 4;
 		case mine:
@@ -614,6 +616,7 @@ int getCost(int cardNumber)
 			return 4;
 		case village:
 			return 3;
+
 		case baron:
 			return 4;
 		case great_hall:
@@ -624,6 +627,7 @@ int getCost(int cardNumber)
 			return 3;
 		case tribute:
 			return 5;
+
 		case ambassador:
 			return 3;
 		case cutpurse:
@@ -634,6 +638,7 @@ int getCost(int cardNumber)
 			return 5;
 		case salvager:
 			return 4;
+			
 		case sea_hag:
 			return 4;
 		case treasure_map:
@@ -669,9 +674,9 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		case council_room:
 			//+4 Cards
 			for (i = 0; i < 4; i++)
-	{
-		drawCard(currentPlayer, state);
-	}
+			{
+				drawCard(currentPlayer, state);
+				}
 			
 			//+1 Buy
 			state->numBuys++;
