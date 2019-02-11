@@ -5,3 +5,8 @@
 *.o
 dominion/testDrawCard.dSYM/Contents/Resources/DWARF/testDrawCard
 dominion/player.dSYM/testutilities.c
+dominion/cardtest4.dSYM/Contents/Resources/DWARF/cardtest4
+dominion/badTestDrawCard.dSYM/Contents/Resources/DWARF/badTestDrawCard
+*.plist
+dominion/playdom.dSYM/Contents/Resources/DWARF/playdom
+dominion/player.dSYM/Contents/Resources/DWARF/player

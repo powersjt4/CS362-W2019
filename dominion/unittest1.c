@@ -30,14 +30,14 @@ int main(){
     for(int i = 0; i < MAX_DECK; i++){
         gs.deck[player][i] = i; //Set deck values sequentially 
     }
-    TEST_ASSERT(shuffle(player, &gs)==-1);//Shuffle deck to randomize values
+    TEST_ASSERT(shuffle(player, &gs)==0);//Shuffle deck to randomize values
     for(int i = 0; i < MAX_DECK; i++){
         if(gs.deck[player][i] == i){ //Check that values are not in order
             cardsInOrderCheck++;
         }else{
             cardsInOrderCheck=0;
         }
-        if(cardsInOrderCheck == 10){
+        if(cardsInOrderCheck == MAX_DECK -1){
             TEST_ASSERT(0);
         }
     }

@@ -19,24 +19,27 @@ int setupGame(int p, struct gameState *state){
     state->handCount[p] = 10; 
     state->deckCount[p] = 5; //Needs to be 5 or else shuffle will occur
     state->discardCount[p] = 0;
-    state->deck[p][0] = curse;
+    state->deck[p][0] = curse; // Stack deck
     state->deck[p][1] = silver;
     state->deck[p][2] = curse;
     state->deck[p][3] = gold;
+    state->whoseTurn = 1; // Set player
     return 0;
 }
- 
+
 int main(){
+    int kc[10]= {silver, gold, council_room, baron, minion, treasure_map, tribute, embargo, adventurer, cutpurse};
     struct gameState gs1;
-
+    initializeGame(2, kc, 100, &gs1);
     int player = 1;
-  /*Setup initial values to control game flow*/
-
     setupGame(player, &gs1);
-    TEST_ASSERT(adventurerCard(player, 1, &gs1) == 0); //Assert that function is called successfully
-    TEST_ASSERT(gs1.deckCount[player] == 1); // 4 cards drawn from deck 
-    TEST_ASSERT(gs1.discardCount[player] == 2); // Discard pile contains two curse cards
-    TEST_ASSERT(gs1.handCount[player] == 12);  // Hand now contains two treasure playedCards
+
+    int p1Deck = gs1.deckCount[1];
+    int p1Hand = gs1.handCount[1];
+    cardEffect(adventurer, 1,2,3, &gs1, 1, NULL);
+ 
+    TEST_ASSERT(gs1.deckCount[player] == p1Deck - 2); // 2 cards drawn from deck 
+    TEST_ASSERT(gs1.handCount[player] == p1Hand + 2);  // Hand now contains two treasure playedCards
 
     printf("*** End of adventurerCard() tests ***\n\n");
 
