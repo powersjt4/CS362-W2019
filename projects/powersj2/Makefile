@@ -50,8 +50,13 @@ randomtests: randomtestadventurer.c randomtestcard1.c randomtestcard2.c dominion
 	./randomtestadventurer >> randomtestresults.out
 	gcov dominion.c >> randomtestresults.out
 #	gcc -o randomtestadventurertest dominion.c rngs.c testHelpers.o randomtestadventurer.c $(DEBUG) 
-	gcc -o randomtestcard1 dominion.o rngs.o randomtestcard1.c $(CFLAGS)
-	gcc -o randomtestcard2 dominion.o rngs.o randomtestcard2.c $(CFLAGS)
+	gcc -o randomtestcard1 dominion.o rngs.o testHelpers.o randomtestcard1.c $(CFLAGS)
+	./randomtestcard1 >> randomtestresults.out
+	gcov dominion.c >> randomtestresults.out
+	gcc -o randomtestcard2 dominion.o rngs.o testHelpers.o randomtestcard2.c $(CFLAGS)
+	./randomtestcard2 >> randomtestresults.out
+	gcov dominion.c >> randomtestresults.out
+#	gcc -o randomtestcard2 dominion.c rngs.c testHelpers.o randomtestcard2.c $(DEBUG) 
 
 unittestresults: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.o rngs.o 
 	

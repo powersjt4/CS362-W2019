@@ -1,3 +1,11 @@
+/**
+ * Jake Powers 
+ * This is a collection of functions used in the unit and randoms testAssert
+ * for the dominion code. 
+ * 2.23.19
+*/
+
+
 #include "testHelpers.h"
 #include <stdlib.h>
 #include <stdio.h>

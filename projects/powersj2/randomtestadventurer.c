@@ -25,8 +25,8 @@
 
 
 int setupGame(int p, struct gameState *state){
-    state->handCount[p] = rand() % MAX_DECK; 
-    state->deckCount[p] = rand() % MAX_HAND; 
+    state->handCount[p] = (rand() % (MAX_HAND - 10)) + 10; // Making sure there are always at least 10 cards in deck and hand
+    state->deckCount[p] = (rand() % (MAX_DECK - 10 )) + 10; 
         return 0;
 }
 
