@@ -1351,19 +1351,4 @@ int baronCard(int currentPlayer, int handPos, struct gameState *state, int choic
 	return 0;
 }
 
-void printGameState(int player, struct gameState *state){
-    printf(
-  "numPlayers: %d\n" 
-  "whoseTurn: %d\n"
-  "phase: %d\n"
-  "numActions: %d\n" 
-  "coins: %d\n"
-  "numBuys: %d\n" 
-  "handCount: %d\n"
-  "deckCount: %d\n"
-  "discardCount: %d\n"
-  "playedCardCount: %d\n\n",state->numPlayers,state->whoseTurn,state->phase,state->numActions,state->coins,
-  state->numBuys,state->handCount[player],state->deckCount[player],state->discardCount[player], state->playedCardCount);
-}
-
 //end of dominion.c

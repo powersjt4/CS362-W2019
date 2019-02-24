@@ -6,7 +6,8 @@ rngs.o: rngs.h rngs.c
 
 dominion.o: dominion.h dominion.c rngs.o
 	gcc -c dominion.c -g  $(CFLAGS)
-
+testHelpers.o: testHelpers.h testHelpers.c dominion.o
+	gcc -c testHelpers.c -g -Wall -fpic -lm -std=c99
 playdom: dominion.o playdom.c
 	gcc -o playdom playdom.c -g dominion.o rngs.o $(CFLAGS)
 #To run playdom you need to entere: ./playdom <any integer number> like ./playdom 10*/
@@ -43,9 +44,12 @@ cardtests: cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.o
 	gcc -o cardtest4 dominion.c rngs.c cardtest4.c $(CFLAGS)
 
 # Need .c for running debug not .c
-randomtests: randomtestadventurer.c randomtestcard1.c randomtestcard2.c dominion.o rngs.o 
-	gcc -o randomtestadventurer dominion.o rngs.o randomtestadventurer.c $(CFLAGS)
-	gcc -o randomtestadventurertest dominion.c rngs.c randomtestadventurer.c $(DEBUG) 
+randomtests: randomtestadventurer.c randomtestcard1.c randomtestcard2.c dominion.o rngs.o testHelpers.o
+	echo "Results for running randomtestadventurer:" > randomtestresults.out
+	gcc -o randomtestadventurer dominion.o rngs.o testHelpers.o randomtestadventurer.c $(CFLAGS)
+	./randomtestadventurer >> randomtestresults.out
+	gcov dominion.c >> randomtestresults.out
+#	gcc -o randomtestadventurertest dominion.c rngs.c testHelpers.o randomtestadventurer.c $(DEBUG) 
 	gcc -o randomtestcard1 dominion.o rngs.o randomtestcard1.c $(CFLAGS)
 	gcc -o randomtestcard2 dominion.o rngs.o randomtestcard2.c $(CFLAGS)
 
@@ -98,4 +102,4 @@ player: player.c interface.o
 all: playdom player 
 
 clean:
-	rm -rf *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe unittest? unittestresults.out cardtest? randomtestadventurer randomtestadventurertest ramdomtestcard1 ramdomtestcard2*.dSYM
+	rm -rf *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe unittest? unittestresults.out cardtest? randomtestadventurer randomtestadventurertest randomtestcard? *.dSYM
