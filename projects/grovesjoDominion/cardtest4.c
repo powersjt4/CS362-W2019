@@ -24,8 +24,8 @@ int main(){
     int p0Deck = gs1.deckCount[0]; 
     int numActions = gs1.numActions;
        
-    greatHallCard(0,1,&gs1);
-
+    //greatHallCard(0,1,&gs1);
+    cardEffect(great_hall,1,2,3, &gs1, 1, NULL);
     TEST_ASSERT(gs1.deckCount[0] == p0Deck - 1); 
     TEST_ASSERT(gs1.handCount[0] == p0Hand); // No change get a card lose a card 
     TEST_ASSERT(gs1.numActions == numActions + 1); 

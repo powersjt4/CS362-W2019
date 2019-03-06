@@ -1,0 +1,109 @@
+Results for running unittest:
+unittest1.c:
+** Testing shuffle() **
+Pass: (✓)
+Pass: (✓)
+File 'dominion.c'
+Lines executed:3.78% of 555
+Creating 'dominion.c.gcov'
+
+unittest2.c:
+*** Test function getCost() ***
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+*** End of getCost() tests ***
+
+File 'dominion.c'
+Lines executed:9.19% of 555
+Creating 'dominion.c.gcov'
+
+unittest3.c:
+*** Testing isGameOver() ***
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+*** End of isGameOver() tests ***
+
+File 'dominion.c'
+Lines executed:10.99% of 555
+Creating 'dominion.c.gcov'
+
+unittest4.c:
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+*** End of buyCard() tests ***
+
+File 'dominion.c'
+Lines executed:14.95% of 555
+Creating 'dominion.c.gcov'
+
+cardtest1.c:
+Pass: (✓)
+Pass: (✓)
+*** End of adventurerCard() tests ***
+
+File 'dominion.c'
+Lines executed:30.81% of 555
+Creating 'dominion.c.gcov'
+
+cardtest2.c:
+Pass: (✓)
+Pass: (✓)
+*** End of adventurerCard() tests ***
+
+File 'dominion.c'
+Lines executed:30.81% of 555
+Creating 'dominion.c.gcov'
+
+cardtest3.c:
+Assertion failed:(x) (gs1.handCount[0] == p0Hand + 3), function main, file cardtest3.c, line 30.
+Pass: (✓)
+Assertion failed:(x) (gs1.deckCount[0] == p0Deck - 4), function main, file cardtest3.c, line 32.
+Pass: (✓)
+*** End of council_room() tests ***
+
+File 'dominion.c'
+Lines executed:34.41% of 555
+Creating 'dominion.c.gcov'
+
+cardtest4.c:
+Pass: (✓)
+Pass: (✓)
+Pass: (✓)
+*** End of greatHallCard() tests ***
+
+File 'dominion.c'
+Lines executed:35.14% of 555
+Creating 'dominion.c.gcov'
+
