@@ -1,10 +1,10 @@
 import junit.framework.TestCase;
 import java.util.Random;
 
-public class UrlValidatorTest extends TestCase {
+public class MYUrlValidatorTest extends TestCase {
 
 
-   public UrlValidatorTest(String testName) {
+   public MYUrlValidatorTest(String testName) {
       super(testName);
    }
 

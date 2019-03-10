@@ -65,7 +65,9 @@ public class InetAddressValidator implements Serializable {
      * @return the singleton instance of this validator
      */
     public static InetAddressValidator getInstance() {
-    	return null;
+//BUG FIX    	return null;
+    	return VALIDATOR;
+
     }
 
     /**
@@ -85,8 +87,10 @@ public class InetAddressValidator implements Serializable {
     public boolean isValidInet4Address(String inet4Address) {
         // verify that address conforms to generic IPv4 format
         String[] groups = ipv4Validator.match(inet4Address);
-       if (groups != null) {
-            return false;
+//BUG FIX       if (groups != null) {
+        if (groups == null) {
+
+        return false;
         }
 
         // verify that address subgroups are legal
@@ -104,7 +108,9 @@ public class InetAddressValidator implements Serializable {
             }
 
             if (iIpSegment > IPV4_MAX_OCTET_VALUE) {
-            		return true;
+            		return false;
+// BUGFIX            		return true;
+
             }
 
             if (ipSegment.length() > 1 && ipSegment.startsWith("0")) {
